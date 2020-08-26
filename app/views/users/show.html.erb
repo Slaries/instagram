@@ -6,7 +6,8 @@
   <div class="info col-md-8">
     <div class="user-info-box">
       <h2 class="username">Buratino</h2>
-        <button class="edit-profile btn btn-primary">Edit you Profile</button>
+      <a class="btn btn-primary" <%= link_to 'Edit Profile', edit_user_path(current_user)  %>
+
     </div>
       <div class="posts-block d-flex">
         <ul>
