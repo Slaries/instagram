@@ -60,10 +60,10 @@
   border-top: 1px solid #e0dede;
   justify-content: center;
   a.table{
-    line-height: 20px;
-    color: #b4b3b3;
     font-size: 14px;
     text-align: center;
+    line-height: 20px;
+    color: #b4b3b3;
     &:hover{
       text-decoration: none;
     }
@@ -71,5 +71,18 @@
   a.active{
     border-top: 1px solid #262626;
     color: #262626;
+  }
+}
+
+.image-user{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 20px;
+
+  .container{
+    width: 250px;
+    height: 250px;
+    margin: 10px;
   }
 }
