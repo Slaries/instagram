@@ -1,0 +1,52 @@
+<div class="row profile">
+  <div class="picture col-md-4">
+    <img src="/assets/images/pic1.jpg" >
+  </div>
+
+  <div class="info col-md-8">
+    <div class="user-info-box">
+      <h2 class="username"><%= current_user.username %></h2>
+      <a class="btn btn-primary" <%= link_to 'Edit Profile', edit_user_path(current_user)  %>
+
+    </div>
+      <div class="posts-block d-flex">
+        <ul>
+          <li>3 posts</li>
+          <li>15  followers</li>
+          <li>100 following</li>
+        </ul>
+      </div>
+
+        <div class="full-name-block d-flex">
+          <h2 class="name"><%= current_user.name %></h2>
+          <%=link_to current_user.website, current_user.website, class:  'website' %>
+        </div>
+  </div>
+</div>
+
+<div class="user-blocks">
+  <a class="table active" href="#">
+    POSTS
+  </a>
+  <a class="table" href="#">
+    IGTV
+  </a>
+  <a class="table" href="#">
+    SAVED
+  </a>
+  <a class="table" href="#">
+    TAGGED
+  </a>
+</div>
+
+<div class="image-user col-xs-12">
+  <div class="container col-xs-4">
+    <%= image_tag "pic1.jpg", height: '250' %>
+  </div>
+  <div class="container col-xs-4">
+    <%= image_tag "pic2.jpg", height: '250' %>
+  </div>
+  <div class="container col-xs-4">
+    <%= image_tag "pic3.jpg", height: '250' %>
+  </div>
+</div>
