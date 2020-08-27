@@ -1,18 +1,81 @@
 <div class="row">
   <div class="col-3">
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-edit-profile" role="tab" aria-controls="v-edit-profile" aria-selected="true">Edit Profile</a>
-      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-change-password" role="tab" aria-controls="v-change-password" aria-selected="false">Change Password</a>
-      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-email-&-sms" role="tab" aria-controls="v-email-&-sms" aria-selected="false">Email & SMS</a>
-      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-push-message" role="tab" aria-controls="v-push-message" aria-selected="false">Push-message</a>
+      <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#edit-profile" role="tab" aria-controls="edit-profile" aria-selected="true">Edit Profile</a>
+      <a class="nav-link" id="change-password-tab" data-toggle="pill" href="#change-password" role="tab" aria-controls="change-password" aria-selected="false">Change Password</a>
+      <a class="nav-link" id="email-&-sms-tab" data-toggle="pill" href="#email-&-sms" role="tab" aria-controls="email-&-sms" aria-selected="false">Email & SMS</a>
+      <a class="nav-link" id="push-message-tab" data-toggle="pill" href="#push-message" role="tab" aria-controls="push-message" aria-selected="false">Push-message</a>
     </div>
   </div>
   <div class="col-9">
     <div class="tab-content" id="v-pills-tabContent">
-      <div class="tab-pane fade show active" id="v-edit-profile"  role="tabpanel" aria-labelledby="v-edit-profile">...</div>
-      <div class="tab-pane fade" id="v-change-password" role="tabpanel" aria-labelledby="v-change-password">...</div>
-      <div class="tab-pane fade" id="v-email-&-sms" role="tabpanel" aria-labelledby="v-email-&-sms">...</div>
-      <div class="tab-pane fade" id="v-push-message" role="tabpanel" aria-labelledby="v-push-message">...</div>
+      <div class="tab-pane fade show active" id="edit-profile"  role="tabpanel" aria-labelledby="edit-profile-tab">
+        <div class="edit-row container-table">
+               <%= form_with model: current_user, local: true do |f| %>
+                <div class="col-sm-3">
+                  <img class="avatar" src="asset/images/pic1.png">
+                </div>
+                <div class="col-sm-9">
+                  <p class="username"><%=current_user.username %></p>
+                  <a class="change-photo" href="">Change Profile Photo</a>
+                </div>
+              <div class="row user-edit-label">
+                <%= f.label :name %>
+                <div class="edit-field col-sm-9">
+                  <%= f.text_field :name %>
+                </div>
+              </div>
+              <div class="row user-edit-label">
+                <%= f.label :username %>
+                <div class="edit-field col-sm-9">
+                  <%= f.text_field :username %>
+                </div>
+              </div>
+              <div class="row user-edit-label">
+                <%= f.label :website %>
+                <div class="edit-field col-sm-3">
+                  <%= f.text_field :website %>
+                </div>
+              </div>
+              <div class="row user-edit-label">
+                <%= f.label :bio%>
+                <div class="edit-field col-sm-3">
+                  <%= f.text_area :bio%>
+                </div>
+              </div>
+              <div class="row user-edit-label">
+                <%= f.label :email %>
+                <div class="edit-field col-sm-3">
+                  <%= f.text_field :email %>
+                </div>
+              </div>
+              <div class="row user-edit-label">
+                <%= f.label :phone%>
+                <div class="edit-field col-sm-3">
+                  <%= f.text_field :phone%>
+                </div>
+              </div>
+              <div class="row user-edit-label">
+                <%= f.label :gender%>
+                <div class="edit-field col-sm-3">
+                  <%= f.text_field :gender %>
+                </div>
+              </div>
+              <div class="row user-edit-label">
+                <div class="col-sm-3">
+                </div>
+                <div class="col-sm-3 btn">
+                  <%= f.submit "Save"%>
+                </div>
+              </div>
+        <% end %>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="change-password" role="tabpanel" aria-labelledby="change-password-tab">
+        <p>lorem ipsum</p>
+      </div>
+      <div class="tab-pane fade" id="email-&-sms" role="tabpanel" aria-labelledby="email-&-sms-tab">2</div>
+      <div class="tab-pane fade" id="push-message" role="tabpanel" aria-labelledby="push-message-tab">3</div>
     </div>
   </div>
 </div>
