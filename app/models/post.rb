@@ -1,3 +1,5 @@
-class Post < ApplicationRecord
-  belongs_to :user
+class Post < ApplicationRecord::Base
+  include ImageUploader::Attachment(:image)
+
+
 end
