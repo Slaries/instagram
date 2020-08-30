@@ -1,5 +1,11 @@
-class UsersController < ApplicationController
+class PostsController < ApplicationController
+  def index
+
+  end
   def show
+  end
+  def new
+
   end
   def create
     Post.create(post_params)

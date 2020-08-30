@@ -230,6 +230,7 @@ GEM
 
 PLATFORMS
   ruby
+  unknown
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)

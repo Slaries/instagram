@@ -1,16 +1,18 @@
-<%= form_with(model post, local: true) do |form| %>
+<%= form_with(model: @post, local: true) do |form| %>
+
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :description, 'Content' %>
     <%= form.text_field :description %>
   </div>
 
   <div class="field">
-    <%= form.hidden_field :image, value: @post.cached_image_data %>
+    <%= form.hidden_field :image %>
     <%= form.file_field :image %>
   </div>
 
-  <div class="actions">
-    <% form.submit %>
+  <%= form.text_field :user_id, value: current_user.id, class:'d-none' %>
+  <div><br>
+    <%= form.submit 'Create Post', class: 'btn btn-primary' %>
   </div>
 
 <%end %>
