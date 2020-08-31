@@ -1,16 +1,21 @@
 class PostsController < ApplicationController
   def index
-
+    @post = Post.all
   end
   def show
   end
   def new
-
+    @post = Post.new
   end
   def create
-    Post.create(post_params)
+    @post = Post.new(post_params)
+    if @post.save
+      flash[:success] = "Post added"
+      redirect_to user_path(current_user)
+    else
+      render 'new'
+    end
 
-    redirect_to root_path
   end
   def edit
   end

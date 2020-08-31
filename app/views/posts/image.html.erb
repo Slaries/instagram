@@ -1,0 +1,6 @@
+<div>
+  <% if post.image_data? %>
+    <%= image_tag post.image_url %>
+  <% end %>
+  <p><%= post.description %> | <%= link_to 'Edit', edit_post_path(post) %></p>
+</div>

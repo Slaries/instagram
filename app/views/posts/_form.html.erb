@@ -1,12 +1,12 @@
 <%= form_with(model: @post, local: true) do |form| %>
-
+  <%= render "shared/errors", object: @post %>
   <div class="field">
     <%= form.label :description, 'Content' %>
     <%= form.text_field :description %>
   </div>
 
   <div class="field">
-    <%= form.hidden_field :image %>
+    <%= form.hidden_field :image, value: @post.cached_image_data %>
     <%= form.file_field :image %>
   </div>
 
