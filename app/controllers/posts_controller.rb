@@ -13,7 +13,7 @@ class PostsController < ApplicationController
       flash[:success] = "Post added"
       redirect_to user_path(current_user)
     else
-      render 'new'
+      render 'edit'
     end
 
   end
@@ -22,6 +22,6 @@ class PostsController < ApplicationController
   def update
   end
   def post_params
-    params.require(:post).permit(:description, :image, :user_id)
+    params.require(:post).permit(:description, :image, :user_id, :remove_image)
   end
 end

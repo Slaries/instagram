@@ -11,9 +11,9 @@
     </div>
       <div class="posts-block d-flex">
         <ul>
-          <li>3 posts</li>
-          <li>15  followers</li>
-          <li>100 following</li>
+          <li><%= @posts.count %> posts</li>
+          <li>1XX  followers</li>
+          <li>1XXX following</li>
         </ul>
       </div>
 
@@ -40,13 +40,11 @@
 </div>
 
 <div class="image-user col-xs-12">
-  <div class="container col-xs-4">
-    <%= image_tag "pic1.jpg", height: '250' %>
-  </div>
-  <div class="container col-xs-4">
-    <%= image_tag "pic2.jpg", height: '250' %>
-  </div>
-  <div class="container col-xs-4">
-    <%= image_tag "pic3.jpg", height: '250' %>
+  <div>
+    <% @posts.each do |post|%>
+      <div>
+        <%=image_tag post.image_url, width: '300' %>
+      </div>
+    <% end %>
   </div>
 </div>

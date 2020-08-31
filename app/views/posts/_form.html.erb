@@ -10,6 +10,11 @@
     <%= form.file_field :image %>
   </div>
 
+  <% if @post.image_data? %>
+    <%= image_tag @post.image_url(:thumb) %>
+    Remove attachment: <%= f.check_box :remove_image %>
+  <% end %>
+
   <%= form.text_field :user_id, value: current_user.id, class:'d-none' %>
   <div><br>
     <%= form.submit 'Create Post', class: 'btn btn-primary' %>
