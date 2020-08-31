@@ -23,28 +23,32 @@
         </div>
   </div>
 </div>
-
-<div class="user-blocks">
-  <a class="table active" href="#">
-    POSTS
-  </a>
-  <a class="table" href="#">
-    IGTV
-  </a>
-  <a class="table" href="#">
-    SAVED
-  </a>
-  <a class="table" href="#">
-    TAGGED
-  </a>
-</div>
-
-<div class="image-user col-xs-12">
-  <div>
-    <% @posts.each do |post|%>
-      <div>
-        <%=image_tag post.image_url, width: '300' %>
+<div>
+    <div class="user-blocks">
+      <a class="table active" href="#">
+        POSTS
+      </a>
+      <a class="table" href="#">
+        IGTV
+      </a>
+      <a class="table" href="#">
+        SAVED
+      </a>
+      <a class="table" href="#">
+        TAGGED
+      </a>
+    </div>
+  <div class="container">
+    <div class="row">
+      <div class="row show-posts">
+        <% @posts.each do |post|%>
+          <div class="col-md-4">
+            <%=link_to (image_tag post.image_url, width: '300'),  post_path(post) %>
+            <%= post.description %><br/>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
+
 </div>

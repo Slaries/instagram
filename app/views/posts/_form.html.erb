@@ -2,7 +2,7 @@
   <%= render "shared/errors", object: @post %>
   <div class="field">
     <%= form.label :description, 'Content' %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, :size=>"30", :maxlength=>"100" %>
   </div>
 
   <div class="field">
@@ -20,4 +20,4 @@
     <%= form.submit 'Create Post', class: 'btn btn-primary' %>
   </div>
 
-<%end %>
+<%end%>

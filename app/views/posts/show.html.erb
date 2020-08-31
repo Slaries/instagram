@@ -1,4 +1,11 @@
-<p>
-  <strong>Photo:</strong>
-  <%= image_tag @post.image_url %>
-</p>
+<div class="row container col-12">
+  <div class="col-8">
+      <%= image_tag @post.image_url, width: '300' %><br/>
+  </div>
+
+  <div class="col-4">
+    <b><%= @post.user.username %></b> write: <br/>
+
+    <%= @post.description %><br/>
+  </div>
+</div>
