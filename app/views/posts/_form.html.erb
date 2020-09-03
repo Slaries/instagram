@@ -1,23 +1,22 @@
-<%= form_with(model: @post, local: true) do |form| %>
-  <%= render "shared/errors", object: @post %>
+<%= form_for @post do |form| %>
+
   <div class="field">
     <%= form.label :description, 'Content' %>
-    <%= form.text_field :description, :size=>"30", :maxlength=>"100" %>
+    <%= form.text_field :description, :size=>"30", :maxlength=>"100" %><br/>
   </div>
-
   <div class="field">
     <%= form.hidden_field :image, value: @post.cached_image_data %>
-    <%= form.file_field :image %>
-  </div>
-
+    <%= form.file_field :image, value: @post.cached_image_data%>
+  </div><br/>
   <% if @post.image_data? %>
-    <%= image_tag @post.image_url(:thumb) %>
-    Remove attachment: <%= f.check_box :remove_image %>
+
+    <%= image_tag @post.image_url, width: '300' %><br/>
+<!--      Remove attachment: <%#= form.check_box :remove_image %>-->
   <% end %>
 
   <%= form.text_field :user_id, value: current_user.id, class:'d-none' %>
-  <div><br>
-    <%= form.submit 'Create Post', class: 'btn btn-primary' %>
-  </div>
+    <div><br>
+      <%= form.submit 'Save Post', class: 'btn btn-primary' %>
+    </div>
 
 <%end%>
